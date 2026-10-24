@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madeireira Beira Rio (versão com efeitos) | Materiais de construção em Barbalha-CE</title>
+<meta name="description" content="Madeiras, telhas, pisos, porcelanatos, hidráulica, elétrica, iluminação, tintas e portas, com estoque atualizado e entrega em Juazeiro do Norte, Barbalha e toda a região.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;400;500;600;700&family=Rubik:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g1:#227e3e; --g2:#066b25; --dk:#064a1b; --dk2:#043814; --lt:#a0e6b5;
+  --txt:#000; --gutter:clamp(16px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:var(--txt);background:#fff;line-height:1.3;overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.container{width:100%;max-width:1280px;margin-inline:auto;padding-inline:var(--gutter)}
+.green{color:var(--g1)} .dark{color:var(--dk)} .light{color:var(--lt)}
+
+/* Botão */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;text-align:center;text-decoration:none;color:#fff;
+  background:linear-gradient(#227e3e,#066b25);border-radius:10px;padding:18px 44px;font-weight:500;font-size:clamp(15px,1.4vw,19px);
+  min-height:56px;transition:filter .2s,transform .2s}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--lt);outline-offset:3px}
+.btn img,.btn svg{width:36px;height:36px;flex:none}
+.btn--lg{padding:24px 70px;font-size:clamp(16px,1.6vw,23px);border-radius:12px}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;padding:12px 0;background:linear-gradient(#fff 70%,rgba(255,255,255,0))}
+.menu{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(#227e3e,#066b25);
+  border-bottom:9px solid var(--dk);border-radius:18px;padding:14px clamp(16px,3vw,58px);color:#fff}
+.logo{width:clamp(110px,12vw,195px);flex:none;display:block}
+.logo img{width:100%;height:auto}
+.menu__addr{font-size:clamp(14px,1.35vw,20px);text-align:center}
+.menu__btn{text-decoration:none;color:#fff;font:600 13px Inter,sans-serif;padding:9px 28px;border:1px solid #fff;border-radius:7px;background:var(--dk);white-space:nowrap}
+.menu__btn:hover{background:#fff;color:var(--dk)}
+
+/* Hero */
+.hero{--hero-img-w:min(59.7vw,1146px);position:relative;padding-block:clamp(24px,4vw,60px) 0;
+  min-height:calc(var(--hero-img-w)*1080/1146 - 70px - 5vw)}
+.hero__grid{display:flex;align-items:center;min-height:inherit}
+.hero__text{position:relative;z-index:2;max-width:clamp(400px,38vw,676px);padding-bottom:clamp(24px,5vw,80px)}
+.hero h1{font-size:clamp(2rem,4.5vw,4.5rem);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.hero p.lead{font-size:clamp(1rem,1.5vw,1.5rem);line-height:1.57;margin-top:clamp(16px,2vw,30px);max-width:600px}
+.hero__cta{margin-top:clamp(24px,3vw,44px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.hero__phone{font:600 clamp(16px,1.6vw,22px) Inter,sans-serif;color:var(--dk)}
+.hero__img{position:absolute;right:0;top:-70px;width:var(--hero-img-w);z-index:0;pointer-events:none}
+.hero__mascot{width:100%;height:auto;display:block}
+
+/* Números */
+.stats-wrap{position:relative;z-index:1;background:linear-gradient(#fff 50%,var(--dk) 50%)}
+.stats{max-width:1464px;margin-inline:auto;background:var(--g1);border:9px solid var(--g2);border-radius:39px;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,95px);padding:clamp(20px,2.5vw,40px) clamp(16px,3vw,40px);width:calc(100% - 2*var(--gutter))}
+.stat strong{display:block;font-size:clamp(2rem,4vw,4.8rem);font-weight:700;line-height:1.05}
+.stat > span{display:block;font-size:clamp(.9rem,1.7vw,2.05rem);font-weight:500;line-height:1.1}
+.stats i{width:1px;align-self:stretch;background:#fff;flex:none}
+
+/* Diferenciais */
+.perks{background:var(--dk);padding:clamp(32px,4vw,56px) 0 clamp(48px,6vw,90px)}
+.perks__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,24px)}
+.perk{position:relative;aspect-ratio:354/394;border-radius:16px;overflow:hidden;background:var(--g1);border:1px solid var(--dk2);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:2px}
+.perk>img{position:absolute;left:2%;top:1.5%;width:96%;height:auto}
+.perk div{position:relative;z-index:1;padding:clamp(28px,3.4vw,52px) clamp(14px,1.6vw,24px) clamp(14px,1.6vw,24px);background:linear-gradient(to top,rgba(6,75,27,.9) 55%,rgba(6,75,27,0));text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.perk h3{font-size:clamp(1.1rem,1.7vw,2.05rem);line-height:1.05;font-weight:700}
+.perk p{margin-top:10px;font-size:clamp(.85rem,1.2vw,1.35rem);line-height:1.1}
+
+/* Seções genéricas */
+.section{padding-block:clamp(48px,7vw,110px)}
+.title{font-size:clamp(1.9rem,4vw,3.9rem);font-weight:400;line-height:1.05;text-align:center}
+.title b{font-weight:700}
+
+/* Como funciona */
+.steps{margin-top:clamp(28px,4vw,56px);background:linear-gradient(90deg,#f4f4f4,#d9fee4);border-radius:21px;padding:clamp(24px,3vw,48px) clamp(20px,2.7vw,34px)}
+.steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px)}
+.step__head{display:flex;align-items:center;gap:0}
+.step__num{width:31px;height:31px;border-radius:50%;background:#fff;color:var(--dk);font-weight:700;font-size:14px;display:grid;place-items:center;flex:none}
+.step__head::after{content:"";flex:1;height:1px;background:var(--dk)}
+.step h3{margin-top:clamp(16px,2vw,50px);font-size:clamp(1.1rem,1.6vw,1.5rem);font-weight:600;line-height:1.23}
+.step p{margin-top:12px;font-size:clamp(1rem,1.6vw,1.5rem);line-height:1.23}
+.center{display:flex;justify-content:center;margin-top:clamp(24px,3vw,40px)}
+
+/* Conheça */
+.about{background:linear-gradient(270deg,#f4f4f4,#d9fee4);border-radius:21px;padding:clamp(24px,5vw,112px) clamp(20px,5vw,100px);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,60px);align-items:center}
+.about h2{font-size:clamp(2.2rem,5.2vw,4.9rem);font-weight:400;line-height:1.14}
+.about h2 b{color:var(--g1);display:block}
+.about p{margin-top:clamp(16px,3vw,45px);font-size:clamp(1rem,1.7vw,1.8rem);line-height:1.3}
+.about__imgs{position:relative;aspect-ratio:1/1.05;width:100%;max-width:520px;margin-inline:auto}
+.about__imgs img{position:absolute;height:auto}
+.about__imgs .a1{top:0;right:0;width:68%}
+.about__imgs .a2{bottom:0;left:0;width:75%}
+
+/* Depoimentos */
+.reviews{background:linear-gradient(90deg,var(--dk),var(--g1));color:#fff;padding-block:clamp(40px,6vw,88px)}
+.reviews .title{color:#fff}
+.reviews__grid{margin-top:clamp(28px,4vw,60px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px)}
+.review{display:flex;flex-direction:column;gap:14px;font-family:Rubik,sans-serif}
+.review__head{display:flex;align-items:center;gap:16px}
+.review__avatar{width:72px;height:72px;border-radius:50%;background:#fff;color:var(--dk);display:grid;place-items:center;font:600 1.6rem Rubik,sans-serif;flex:none}
+.review__name{font-weight:600;font-size:clamp(1rem,1.4vw,1.2rem)}
+.review__handle{font-weight:600;font-size:.97rem;color:var(--lt)}
+.review blockquote{margin:0;font-style:italic;font-size:clamp(1rem,1.4vw,1.2rem);line-height:1.6}
+
+/* Categorias */
+.cats{background:linear-gradient(#fff,#e9fff0 40%,#fff)}
+.cats__bar{width:min(325px,60%);height:4px;background:var(--g1);margin:0 auto clamp(20px,3vw,32px);border-radius:2px}
+.cats__grid{margin-top:clamp(28px,4vw,56px);display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.5vw,20px)}
+.cat{background:#fff;border:1px solid #dedbd4;border-radius:17px;padding:27px 16px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cat__icon{width:64px;height:64px;border-radius:50%;background:#173c2d;display:grid;place-items:center;flex:none}
+.cat__icon img{width:28px;height:28px}
+.cat h3{font:800 clamp(1rem,1.3vw,1.16rem)/1.1 Inter,sans-serif;color:#173c2d;letter-spacing:-.015em}
+.cat p{font:400 clamp(.9rem,1.1vw,1.04rem)/1.35 Inter,sans-serif;color:#5b5b56}
+
+/* Conhecer de perto */
+.visit{text-align:center}
+.visit .title b{color:var(--g1)}
+.visit__lead{margin:clamp(14px,2vw,23px) auto 0;max-width:975px;font-weight:300;font-size:clamp(1.05rem,2.3vw,2.2rem);line-height:1.25}
+.video{margin:clamp(28px,4vw,56px) auto 0;max-width:1099px;aspect-ratio:1099/533;background:#d9d9d9;border:4px solid #c3e1cd;border-radius:30px;display:grid;place-items:center;overflow:hidden;position:relative}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video__play{width:clamp(64px,12.5%,138px);aspect-ratio:1;border-radius:50%;background:var(--g1);display:grid;place-items:center;border:0}
+.video__play::before{content:"";margin-left:8%;border-left:min(3.2vw,36px) solid #fff;border-top:min(2vw,22px) solid transparent;border-bottom:min(2vw,22px) solid transparent}
+.gallery{margin-top:clamp(24px,3vw,44px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,20px)}
+.gallery img{width:100%;height:auto}
+.visit__addr{margin-top:clamp(20px,3vw,40px);font-weight:300;font-size:clamp(1.05rem,2.3vw,2.2rem)}
+
+/* Rodapé / CTA final */
+.footer{padding:0 clamp(8px,2.5vw,49px) clamp(24px,3vw,40px)}
+.footer__box{max-width:1822px;margin-inline:auto;background:var(--dk2);border-radius:clamp(28px,3.3vw,63px);color:#fff;
+  padding:clamp(28px,5vw,100px) clamp(20px,6vw,271px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,4vw,60px);align-items:center}
+.footer h2{font-size:clamp(1.8rem,3.5vw,3.5rem);font-weight:700;line-height:1.3}
+.footer h2 span{font-weight:400}
+.footer .sub{margin-top:16px;font-size:clamp(1.1rem,2.3vw,2.3rem);line-height:1.3}
+.footer .btn{margin-top:clamp(24px,3vw,40px)}
+.footer__side{display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+.footer__addr{font-weight:700;font-size:clamp(1.05rem,1.55vw,1.55rem);line-height:1.5}
+.footer__addr span{font-weight:400}
+.map{width:100%;max-width:522px;aspect-ratio:522/272;border:0;border-radius:12px;background:#d9d9d9}
+.social{display:flex;gap:18px;align-self:flex-end}
+.social a{display:block;width:52px;height:52px}
+.social img{width:100%;height:100%}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1100px){
+  .cats__grid{grid-template-columns:repeat(3,1fr)}
+  .perks__grid{grid-template-columns:repeat(2,1fr)}
+  .perk{aspect-ratio:354/394}
+}
+@media (max-width:900px){
+  .menu__addr{display:none}
+  .hero{min-height:0;padding-bottom:clamp(40px,6vw,90px)}
+  .hero__grid{flex-direction:column;gap:16px}
+  .hero__text{max-width:none;padding-bottom:0}
+  .hero__img{position:relative;right:auto;top:auto;order:-1;width:min(420px,100%);margin-inline:auto}
+  .hero__cta{align-items:center}
+  .hero__text{text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .about{grid-template-columns:1fr}
+  .steps__grid{grid-template-columns:1fr}
+  .reviews__grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .footer__box{grid-template-columns:1fr;text-align:center}
+  .footer .btn{margin-inline:auto}
+  .social{align-self:center}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .stats{flex-direction:column;border-width:6px;border-radius:28px;gap:16px}
+  .stats i{width:60%;height:1px;align-self:center}
+  .stat{text-align:center}
+  .cats__grid{grid-template-columns:repeat(2,1fr)}
+  .btn--lg{padding:20px 28px}
+}
+@media (max-width:520px){
+  .perks__grid{grid-template-columns:1fr}
+  .perk{max-width:420px;width:100%;margin-inline:auto}
+  .cat{padding:20px 10px}
+  .cat__icon{width:52px;height:52px}
+  .cat__icon img{width:24px;height:24px}
+  .btn{padding:16px 24px;width:100%}
+  .menu{border-bottom-width:6px;border-radius:14px}
+}
+@media (max-width:360px){
+  .cats__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* ================= EFEITOS ================= */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;z-index:100;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--g1),var(--lt));pointer-events:none}
+
+/* header encolhe e ganha sombra ao rolar */
+.header{transition:padding .3s}
+.menu{transition:padding .3s,box-shadow .3s,border-bottom-width .3s}
+.is-scrolled .header{padding:6px 0}
+.is-scrolled .menu{padding-block:8px;border-bottom-width:5px;box-shadow:0 10px 30px rgba(6,75,27,.28)}
+.logo{transition:width .3s}
+.is-scrolled .logo{width:clamp(96px,9.5vw,150px)}
+
+/* hero: halos de fundo + mascote flutuando */
+.hero{position:relative}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:-1;pointer-events:none}
+.hero::before{width:520px;height:520px;right:-120px;top:-60px;background:rgba(34,126,62,.18)}
+.hero::after{width:380px;height:380px;left:-140px;bottom:-80px;background:rgba(160,230,181,.35)}
+.hero__float{animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* botões: pulso (hero) + brilho ao passar o mouse */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn:hover::after{left:130%}
+.hero .btn--lg{animation:pulse 2.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,126,62,.55)}70%{box-shadow:0 0 0 18px rgba(34,126,62,0)}100%{box-shadow:0 0 0 0 rgba(34,126,62,0)}}
+
+/* cards de diferenciais */
+.perk{transition:transform .35s,box-shadow .35s}
+.perk>img{transition:transform .6s}
+.perk:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(0,0,0,.35)}
+.perk:hover>img{transform:scale(1.06)}
+
+/* passos: linha que "desenha" */
+.step__head::after{transform:scaleX(var(--p,1));transform-origin:left center}
+
+/* categorias */
+.cat{transition:transform .3s,box-shadow .3s,border-color .3s}
+.cat__icon{transition:transform .4s,background .3s}
+.cat:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(6,75,27,.14);border-color:var(--g1)}
+.cat:hover .cat__icon{transform:rotate(-8deg) scale(1.1);background:var(--g1)}
+
+/* galeria e vídeo */
+.gallery img{transition:transform .5s,box-shadow .5s}
+.gallery img:hover{transform:scale(1.04) rotate(-.6deg);box-shadow:0 16px 30px rgba(0,0,0,.25)}
+.video__play{transition:transform .3s;animation:pulse 2.6s infinite}
+.video__play:hover{transform:scale(1.1)}
+
+/* depoimentos */
+.review{transition:transform .3s}
+.review:hover{transform:translateY(-4px)}
+.review__avatar{transition:transform .4s}
+.review:hover .review__avatar{transform:scale(1.08) rotate(6deg)}
+
+/* botão flutuante do WhatsApp */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(#25d366,#128c7e);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);
+  opacity:0;transform:translateY(20px) scale(.8);pointer-events:none;transition:opacity .35s,transform .35s;animation:pulseWa 2.4s infinite}
+.fab img{width:34px;height:34px}
+.fab.is-visible{opacity:1;transform:none;pointer-events:auto}
+.fab:hover{filter:brightness(1.08)}
+@keyframes pulseWa{0%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 0 rgba(37,211,102,0)}}
+
+@media (prefers-reduced-motion:reduce){
+  .hero__float,.hero .btn--lg,.video__play,.fab{animation:none!important}
+  .btn::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ===== MENU ===== -->
+<header class="header">
+  <div class="container">
+    <nav class="menu" aria-label="Principal">
+      <a class="logo" href="#topo" aria-label="Madeireira Beira Rio"><img src="img/logo.png" alt="Beira Rio"></a>
+      <p class="menu__addr">Av. Leão Sampaio, 4252, Crajubar, Barbalha-CE</p>
+      <a class="menu__btn" href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__text">
+      <h1>Tudo para sua obra em um só lugar. <span class="dark">Do básico ao acabamento.</span></h1>
+      <p class="lead">Madeiras, telhas, pisos, porcelanatos, hidráulica, elétrica, iluminação, tintas e portas, com estoque atualizado e entrega em Juazeiro do Norte, Barbalha e toda a região.</p>
+      <div class="hero__cta">
+        <a class="btn btn--lg" data-wa href="#" target="_blank" rel="noopener"><span>Pedir orçamento <b>no WhatsApp</b></span> <img src="img/icon-whatsapp.svg" alt=""></a>
+        <a class="hero__phone" href="tel:+558835125007">Ligar agora: (88) 3512-5007</a>
+      </div>
+    </div>
+    <div class="hero__img">
+      <div class="hero__float"><img class="hero__mascot" src="img/mascote.png" alt="Mascote da Beira Rio"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NÚMEROS ===== -->
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><strong>Nº 1</strong><span>do Cariri</span></div>
+    <i></i>
+    <div class="stat"><strong>+<span data-count="16">16</span></strong><span>anos de mercado</span></div>
+    <i></i>
+    <div class="stat"><strong>Centro</strong><span>de distribuição próprio</span></div>
+  </div>
+</div>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section class="perks">
+  <div class="container perks__grid">
+    <article class="perk"><img src="img/card-1.png" alt="" loading="lazy"><div><h3>Tudo em um<br><span class="light">só lugar:</span></h3><p>compre todo o material da obra com um único fornecedor.</p></div></article>
+    <article class="perk"><img src="img/card-2.png" alt="" loading="lazy"><div><h3>Estoque<br><span class="light">atualizado:</span></h3><p>menos espera e menos obra parada.</p></div></article>
+    <article class="perk"><img src="img/card-3.png" alt="" loading="lazy"><div><h3>Entrega com<br><span class="light">frota própria:</span></h3><p>o material chega onde você precisa, no prazo combinado.</p></div></article>
+    <article class="perk"><img src="img/card-4.png" alt="" loading="lazy"><div><h3>Equipe<br><span class="light">especializada:</span></h3><p>orientação para você comprar certo, na quantidade certa.</p></div></article>
+  </div>
+</section>
+
+<!-- ===== COMO COMPRAR ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="title">Comprar na<br>Beira Rio <b class="dark">é simples!</b></h2>
+    <div class="steps">
+      <div class="steps__grid">
+        <div class="step"><div class="step__head"><span class="step__num">1</span></div><h3>Chame no WhatsApp:</h3><p>diga o que precisa ou envie sua lista de materiais.</p></div>
+        <div class="step"><div class="step__head"><span class="step__num">2</span></div><h3>Receba seu orçamento:</h3><p>rápido, claro e sem compromisso.</p></div>
+        <div class="step"><div class="step__head"><span class="step__num">3</span></div><h3>Retire ou receba na obra:</h3><p>nossa frota entrega em Juazeiro do Norte, Barbalha e toda a região.</p></div>
+      </div>
+    </div>
+    <div class="center"><a class="btn" data-wa href="#" target="_blank" rel="noopener"><span>Pedir orçamento <b>no WhatsApp</b></span> <img src="img/icon-whatsapp.svg" alt=""></a></div>
+  </div>
+</section>
+
+<!-- ===== CONHEÇA ===== -->
+<section style="padding-bottom:clamp(48px,7vw,110px)">
+  <div class="container">
+    <div class="about">
+      <div>
+        <h2>Conheça a <b>Beira Rio</b></h2>
+        <p>Há mais de 16 anos, a Madeireira Beira Rio é referência no Cariri para quem constrói e reforma. O que começou na madeira hoje é uma loja completa de materiais de construção. Aqui sua obra anda sem complicação: completa, prática e confiável do início ao fim.</p>
+      </div>
+      <div class="about__imgs">
+        <img class="a1" src="img/loja-1.png" alt="Fachada da loja Beira Rio" loading="lazy">
+        <img class="a2" src="img/loja-2.png" alt="Interior da loja Beira Rio" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="reviews">
+  <div class="container">
+    <h2 class="title">Quem compra, <b class="light">recomenda!</b></h2>
+    <div class="reviews__grid">
+      <figure class="review" style="margin:0">
+        <div class="review__head"><div class="review__avatar" aria-hidden="true">RS</div><div><div class="review__name">Rafaela Souza</div><div class="review__handle">@rafa.souza</div></div></div>
+        <blockquote>"O melhor lugar para suas compras de madeira e material de construção."</blockquote>
+      </figure>
+      <figure class="review" style="margin:0">
+        <div class="review__head"><div class="review__avatar" aria-hidden="true">MT</div><div><div class="review__name">Marcela Tavares</div><div class="review__handle">@marcela_tav</div></div></div>
+        <blockquote>"Tive uma boa experiência de compra e a entrega chegou certinha"</blockquote>
+      </figure>
+      <figure class="review" style="margin:0">
+        <div class="review__head"><div class="review__avatar" aria-hidden="true">CA</div><div><div class="review__name">Carlos Andrade</div><div class="review__handle">@carlos.andrade</div></div></div>
+        <blockquote>"Excelente lugar pra comprar madeiras e agora tudo em geral pra sua construção..."</blockquote>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORIAS ===== -->
+<section class="section cats">
+  <div class="container">
+    <div class="cats__bar"></div>
+    <h2 class="title">O que você encontra aqui<br>na <b class="dark">Madeireira Beira Rio?</b></h2>
+    <div class="cats__grid">
+      <article class="cat"><div class="cat__icon"><img src="img/cat-01.svg" alt=""></div><h3>Madeiras</h3><p>Caibros, linhas, ripas, vigas, tábuas, decks e compensados</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-02.svg" alt=""></div><h3>Telhas e Coberturas</h3><p>Colonial, fibrocimento, Onduline e translúcidas</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-03.svg" alt=""></div><h3>Portas e Janelas</h3><p>Portas, portais, basculantes e vitrôs</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-04.svg" alt=""></div><h3>Pisos e Revestimentos</h3><p>Cerâmicas, porcelanatos, argamassas e rejuntes</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-05.svg" alt=""></div><h3>Material Básico</h3><p>Cimento, cal, tijolos e impermeabilizantes</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-06.svg" alt=""></div><h3>Hidráulica</h3><p>Tubos, conexões, registros e caixas d'água</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-07.svg" alt=""></div><h3>Elétrica</h3><p>Fios, cabos, disjuntores, tomadas e interruptores</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-08.svg" alt=""></div><h3>Iluminação</h3><p>Lâmpadas, luminárias, pendentes e LED</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-09.svg" alt=""></div><h3>Banheiro e Cozinha</h3><p>Louças, cubas, pias, torneiras e chuveiros</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-10.svg" alt=""></div><h3>Tintas e Pintura</h3><p>Tintas, vernizes, texturas, rolos e pincéis</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-11.svg" alt=""></div><h3>Ferramentas</h3><p>Manuais e elétricas, discos, brocas e serras</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-12.svg" alt=""></div><h3>Ferragens e Fixação</h3><p>Fechaduras, dobradiças, parafusos e pregos</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-13.svg" alt=""></div><h3>EPIs</h3><p>Botas, luvas, capacetes, óculos e máscaras</p></article>
+      <article class="cat"><div class="cat__icon"><img src="img/cat-14.svg" alt=""></div><h3>Jardinagem e Utilidades</h3><p>Mangueiras, enxadas, escadas, vassouras e lonas</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONHECER DE PERTO ===== -->
+<section class="section visit" style="padding-top:0">
+  <div class="container">
+    <h2 class="title">Venha <b>conhecer de perto</b></h2>
+    <p class="visit__lead">Uma estrutura pensada para atender você com conforto, variedade e agilidade. Venha ver os produtos, tirar dúvidas e fechar o material da sua obra com quem entende.</p>
+
+    <!-- Para usar um vídeo: troque o botão abaixo por <video controls src="..."> ou um <iframe> do YouTube -->
+    <div class="video" id="video">
+      <button class="video__play" type="button" aria-label="Reproduzir vídeo"></button>
+    </div>
+
+    <div class="gallery">
+      <img src="img/galeria-1.png" alt="Loja Beira Rio" loading="lazy">
+      <img src="img/galeria-2.png" alt="Produtos Beira Rio" loading="lazy">
+      <img src="img/galeria-3.png" alt="Estrutura Beira Rio" loading="lazy">
+      <img src="img/galeria-4.png" alt="Atendimento Beira Rio" loading="lazy">
+    </div>
+
+    <p class="visit__addr">Av. Leão Sampaio, 4252, Crajubar, Barbalha-CE</p>
+    <div class="center">
+      <a class="btn btn--lg" style="padding-inline:clamp(40px,5vw,59px)" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&query=Madeireira%20Beira%20Rio%2C%20Av.%20Dr.%20Le%C3%A3o%20Sampaio%2C%204252%2C%20Barbalha%20-%20CE"><span>Como <b>chegar</b></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== CTA FINAL / CONTATO ===== -->
+<footer class="footer" id="contato">
+  <div class="footer__box">
+    <div>
+      <h2><span>Sua obra não pode esperar.</span> Fale com a Beira Rio agora.</h2>
+      <p class="sub">Peça seu orçamento sem compromisso.</p>
+      <a class="btn" data-wa href="#" target="_blank" rel="noopener"><span>Pedir orçamento <b>no WhatsApp</b></span> <img src="img/icon-whatsapp.svg" alt=""></a>
+    </div>
+    <div class="footer__side">
+      <p class="footer__addr">Av. Leão Sampaio, 4252, <span>Crajubar, Barbalha-CE</span></p>
+      <iframe class="map" title="Mapa da Madeireira Beira Rio" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Madeireira%20Beira%20Rio%2C%20Av.%20Dr.%20Le%C3%A3o%20Sampaio%2C%204252%2C%20Barbalha%20-%20CE&hl=pt-BR&z=16&output=embed"></iframe>
+      <div class="social">
+        <a data-wa href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="img/social-whatsapp.svg" alt=""></a>
+        <a id="insta" href="https://www.instagram.com/madeireirabeirario/" target="_blank" rel="noopener" aria-label="Instagram"><img src="img/social-instagram.svg" alt=""></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><img src="img/icon-whatsapp.svg" alt=""></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+
+/* ====== EFEITOS DE ROLAGEM (GSAP) ====== */
+(function () {
+  /* Efeitos leves que não dependem do GSAP */
+  var fab = document.querySelector(".fab");
+  function onScroll() {
+    var y = window.scrollY || 0;
+    document.documentElement.classList.toggle("is-scrolled", y > 40);
+    if (fab) fab.classList.toggle("is-visible", y > window.innerHeight * 0.7);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* Se o GSAP não carregar, a página continua 100% visível e funcional */
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var mm = gsap.matchMedia();
+  mm.add("(prefers-reduced-motion: no-preference)", function () {
+
+    /* Barra de progresso de leitura */
+    gsap.to(".progress", { scaleX: 1, ease: "none",
+      scrollTrigger: { start: 0, end: "max", scrub: 0.2 } });
+
+    /* Entrada do hero */
+    var tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.from(".menu", { y: -70, opacity: 0, duration: 0.8, clearProps: "transform,opacity" })
+      .from(".hero h1", { y: 40, opacity: 0, duration: 0.9 }, "-=0.4")
+      .from(".hero p.lead", { y: 30, opacity: 0, duration: 0.7 }, "-=0.6")
+      .from(".hero__cta > *", { y: 24, opacity: 0, stagger: 0.12, duration: 0.6, clearProps: "transform,opacity" }, "-=0.5")
+      .from(".hero__img", { x: 90, opacity: 0, scale: 0.9, duration: 1.1 }, "-=1.3");
+
+    /* Parallax do mascote ao rolar */
+    gsap.to(".hero__mascot", { yPercent: 5, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+
+    /* Revelação em lote (esconde antes, mostra ao entrar na tela) */
+    function reveal(sel, o) {
+      o = o || {};
+      var els = gsap.utils.toArray(sel);
+      if (!els.length) return;
+      var y = o.y == null ? 50 : o.y, x = o.x || 0, sc = o.scale || 1;
+      gsap.set(els, { opacity: 0, y: y, x: x, scale: sc });
+      ScrollTrigger.batch(els, {
+        start: o.start || "top 88%", once: true,
+        onEnter: function (batch) {
+          gsap.to(batch, { opacity: 1, y: 0, x: 0, scale: 1, duration: o.dur || 0.8,
+            stagger: o.stagger == null ? 0.12 : o.stagger, ease: "power3.out",
+            clearProps: "transform,opacity" });
+        }
+      });
+    }
+
+    /* Números: sobem e o "+16" conta */
+    reveal(".stats", { y: 80, dur: 0.9 });
+    gsap.from(".stats i", { scaleY: 0, duration: 0.8, delay: 0.3, ease: "power2.out",
+      scrollTrigger: { trigger: ".stats-wrap", start: "top 85%", once: true } });
+    document.querySelectorAll("[data-count]").forEach(function (el) {
+      var end = parseInt(el.getAttribute("data-count"), 10), o = { v: 0 };
+      el.textContent = "0";
+      gsap.to(o, { v: end, duration: 1.8, ease: "power2.out",
+        onUpdate: function () { el.textContent = Math.round(o.v); },
+        scrollTrigger: { trigger: ".stats-wrap", start: "top 85%", once: true } });
+    });
+
+    reveal(".perk", { y: 70, stagger: 0.14 });
+    reveal(".title", { y: 30 });
+    reveal(".step", { y: 40, stagger: 0.18 });
+    gsap.fromTo(".step__head", { "--p": 0 }, { "--p": 1, duration: 1, stagger: 0.18, ease: "power2.out",
+      scrollTrigger: { trigger: ".steps", start: "top 80%", once: true } });
+    reveal(".steps + .center .btn", { y: 30 });
+
+    /* Seção "Conheça": texto entra pela esquerda + imagens com parallax em velocidades diferentes */
+    reveal(".about > div:first-child", { x: -60, y: 0, dur: 1 });
+    gsap.to(".about__imgs .a1", { yPercent: -10, ease: "none",
+      scrollTrigger: { trigger: ".about", start: "top bottom", end: "bottom top", scrub: true } });
+    gsap.to(".about__imgs .a2", { yPercent: 8, ease: "none",
+      scrollTrigger: { trigger: ".about", start: "top bottom", end: "bottom top", scrub: true } });
+
+    reveal(".review", { y: 50, stagger: 0.18 });
+    reveal(".cat", { y: 40, scale: 0.94, stagger: 0.06, dur: 0.6 });
+    reveal(".visit__lead", { y: 30 });
+    reveal(".video", { y: 40, scale: 0.94, dur: 1 });
+    reveal(".gallery img", { y: 50, scale: 0.92, stagger: 0.1 });
+    reveal(".visit__addr", { y: 20 });
+    reveal(".footer__box > div", { y: 50, stagger: 0.2, dur: 0.9 });
+  });
+})();
+
+  /* ====== CONFIGURE AQUI ====== */
+  var WHATSAPP_NUMERO = "5588998401976"; // DDI + DDD + número
+  var WHATSAPP_MSG    = "Olá! Gostaria de pedir um orçamento.";
+  var INSTAGRAM_URL   = "https://www.instagram.com/madeireirabeirario/";
+
+  var wa = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MSG);
+  document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = wa; });
+  document.getElementById("insta").href = INSTAGRAM_URL;
+</script>
+</body>
+</html>
